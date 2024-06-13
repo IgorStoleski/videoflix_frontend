@@ -1,0 +1,8 @@
+<div class="videoflix-container">
+  <div [@letterAnimation]="animationState">
+    <span class="letter" *ngFor="let letter of letters">{{ letter }}</span>
+  </div>
+  <div *ngIf="finalAnimationState" [@finalAnimation] (@finalAnimation.done)="onFinalAnimationDone()">
+    <span class="first-letter">V</span>
+  </div>
+</div>
