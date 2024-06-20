@@ -1,1 +1,150 @@
-<p>register works!</p>
+<div class="signup-container">
+  <div class="successMessage" *ngIf="successMessage">
+    {{ successMessage }} 
+  </div>
+  <div class="errorMessageRegister" *ngIf="errorMessageRegister">
+    {{ errorMessageRegister}} 
+  </div>
+  <div class="mat-form-container">
+    <div class="header">
+      <mat-card-actions>
+        <button
+          class="btn-sign"
+          mat-button
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          Sign In
+        </button>
+        <button
+          class="btn-sign"
+          mat-button
+          [routerLink]="['/register']"
+          routerLinkActive="router-link-active"
+        >
+          Sign Up
+        </button>
+      </mat-card-actions>
+    </div>
+    <mat-card-content>
+      <form class="login" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Username"
+            formControlName="username"
+            required
+          />
+          <mat-error *ngIf="signUpForm.get('username')?.hasError('required')">
+            You must enter your username
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="First Name"
+            formControlName="first_Name"
+            required
+          />
+          <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">
+            You must enter your first name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            placeholder="Last Name"
+            formControlName="last_Name"
+            required
+          />
+          <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">
+            You must enter your last name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your email</mat-label>
+          <input
+            matInput
+            placeholder="pat@example.com"
+            formControlName="email"
+            required
+          />
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">
+            You must enter a valid email
+          </mat-error>
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">
+            Not a valid email
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            [type]="hide() ? 'password' : 'text'"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon class="custom-icon-color">{{
+              hide() ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+          <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
+            You must enter a password
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Confirm your password</mat-label>
+          <input
+            matInput
+            [type]="hide() ? 'password' : 'text'"
+            formControlName="confirmPassword"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon class="custom-icon-color">{{
+              hide() ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="signUpForm.get('confirmPassword')?.hasError('required')"
+          >
+            You must confirm your password
+          </mat-error>
+          <mat-error *ngIf="signUpForm.hasError('passwordMismatch')">
+            Passwords do not match
+          </mat-error>
+        </mat-form-field>
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <div class="space-between">
+          <div class="forgot"><a>Forgot Password?</a></div>
+          <div class="button">
+            <button class="btn-sign" type="submit" mat-button>Sign Up</button>
+          </div>
+        </div>
+      </form>
+      <div class="imprint-container">
+        <span>Imprint</span>
+        <div>|</div>
+        <span>Private Policy</span>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
