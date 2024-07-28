@@ -1,0 +1,69 @@
+<mat-toolbar color="primary">
+  <div class="sidenav-toggle">
+    <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1><span>V</span>ideoflix</h1>
+  </div>
+</mat-toolbar>
+<<mat-sidenav-container autosize>
+  <mat-sidenav
+    [ngClass]="!isCollapsed ? 'expanded' : ''"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="isMobile ? 'false' : 'true'"
+  >
+    <mat-nav-list>
+      <div class="nav-container">
+        <div class="home-container">
+          <a mat-list-item routerLink="/dashboard/home" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>house</mat-icon>
+              <span *ngIf="!isCollapsed">Home</span>
+            </span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/doku" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>pets</mat-icon>
+              <span *ngIf="!isCollapsed">Doku</span>
+            </span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/sport" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>emoji_events</mat-icon>
+              <span *ngIf="!isCollapsed">Sport</span>
+            </span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/kids" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>toys</mat-icon>
+              <span *ngIf="!isCollapsed">Kids</span>
+            </span>
+          </a>
+          <a mat-list-item (click)="logout()">
+            <span class="entry">
+              <mat-icon>logout</mat-icon>
+              <span *ngIf="!isCollapsed">Logout</span>
+            </span>
+          </a>
+        </div>
+        <div class="imprint-container">
+          <a mat-list-item routerLink="/imprint" target="_blank" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>description</mat-icon>
+              <span *ngIf="!isCollapsed">Imprint</span>
+            </span>
+          </a>
+          <a mat-list-item routerLink="/legalnotice" target="_blank" routerLinkActive="active">
+            <span class="entry">
+              <mat-icon>gavel</mat-icon>
+              <span *ngIf="!isCollapsed">Legal Notice</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

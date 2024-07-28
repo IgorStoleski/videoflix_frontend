@@ -1,0 +1,83 @@
+@import "./../app.component.scss";
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: black;
+
+  h1 {
+    font-weight: bold;
+    color: rgb(129, 33, 33);
+    span {
+      color: rgb(63, 177, 216);
+    }
+  }
+
+  .sidenav-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+mat-sidenav-container {
+  background-color: rgb(25, 28, 38);
+  height: 100vh;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav {
+  background-color: rgb(25, 28, 38);
+  padding-top: 55px;
+  border-right: 1px solid rgba(211, 205, 205, 0.12);
+  @media screen and (min-width: 600px) {
+    padding-top: 60px;
+  }
+
+  .entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    span {
+      color: white;
+    }
+  }
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav-content {
+  padding-top: 70px;
+  @media screen and (min-width: 600px) {
+    padding-top: 60px;
+  }
+}
+
+mat-icon {
+  color: white;
+}
+
+.content {
+  padding: 25px;
+}
+
+.expanded {
+  width: 250px;
+}
+
+mat-nav-list {
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+
+}
