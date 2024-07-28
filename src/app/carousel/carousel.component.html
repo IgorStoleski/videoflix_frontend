@@ -1,0 +1,16 @@
+<p-carousel
+  [value]="videos"
+  [numVisible]="numVisible"
+  [numScroll]="1"
+  [circular]="false"
+  orientation="horizontal"
+>
+  <ng-template pTemplate="item" let-video>
+    <img
+      [src]="video.thumbnails"
+      [alt]="video.title"
+      (click)="playVideo(video.id)"
+      style="cursor: pointer"
+    />
+  </ng-template>
+</p-carousel>
