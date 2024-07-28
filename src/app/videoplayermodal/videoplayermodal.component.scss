@@ -1,0 +1,22 @@
+.player-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #292833;
+
+    .title{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .color-white{
+        color: white;
+    }
+
+    .description{
+        margin: 10px 0;
+        padding: 0 24px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}

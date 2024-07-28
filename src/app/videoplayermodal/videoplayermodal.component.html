@@ -1,0 +1,12 @@
+<div class="player-container" *ngIf="video">
+ <div class="title">
+    <h2 class="color-white" mat-dialog-title> {{ video.title }} </h2>
+    <mat-dialog-actions>
+      <button class="color-white" mat-button (click)="onNoClick()">Close</button>
+    </mat-dialog-actions>
+ </div>
+  <mat-dialog-content>
+    <app-videoplayer [videoId]="videoId"></app-videoplayer>
+  </mat-dialog-content>
+  <div class="description color-white"> {{ video.description }} </div>
+</div>
