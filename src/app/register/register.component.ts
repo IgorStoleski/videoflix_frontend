@@ -22,7 +22,8 @@ import { ValidationService } from './../validation.service';
 export class RegisterComponent {
   error: string | null = null;
   errorMessage = signal('');
-  hide = signal(true);
+  hidePassword = signal(true);
+  hideConfirmPassword = signal(true);
   successMessage: string = '';
   errorMessageRegister: string = '';
   
@@ -50,9 +51,12 @@ export class RegisterComponent {
 
   }
   
-  clickEvent(event: MouseEvent) {
-    this.hide.set(!this.hide());
-    event.stopPropagation();
+  toggleVisibility(field: 'password' | 'confirmPassword') {
+    if (field === 'password') {
+      this.hidePassword.set(!this.hidePassword());
+    } else if (field === 'confirmPassword') {
+      this.hideConfirmPassword.set(!this.hideConfirmPassword());
+    }
   }
 
   onSubmit() {

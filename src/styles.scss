@@ -1,4 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/font.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2pt solid transparent;
+  border-radius: 3pt;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border: 3pt solid transparent;
+  background-clip: content-box;
+}
+
+.p-carousel-indicators {
+  display: none;
+}
+
+.mat-h3, .mat-typography h3 {
+  margin: 0;
+}
+
+/* .ng-star-inserted {
+  margin-top: 0 !important;
+} */
+
+/* .p-carousel-item {
+  display: flex;
+  flex: unset !important;
+  padding-right: 32px;
+} */
+
+.p-carousel-container {
+  gap: 16px;
+}
+
+.video {
+  width: 500px;
+  height: 300px;
+  background-color: black;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.video-player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+video {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.resolution-buttons {
+  margin-bottom: 20px;
+}
+.resolution-buttons button {
+  margin: 0 5px;
+}

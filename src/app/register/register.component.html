@@ -1,9 +1,9 @@
 <div class="signup-container">
   <div class="successMessage" *ngIf="successMessage">
-    {{ successMessage }} 
+    {{ successMessage }}
   </div>
   <div class="errorMessageRegister" *ngIf="errorMessageRegister">
-    {{ errorMessageRegister}} 
+    {{ errorMessageRegister }}
   </div>
   <div class="mat-form-container">
     <div class="header">
@@ -48,7 +48,7 @@
             formControlName="first_Name"
             required
           />
-          <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">
+          <mat-error *ngIf="signUpForm.get('first_Name')?.hasError('required')">
             You must enter your first name
           </mat-error>
         </mat-form-field>
@@ -60,7 +60,7 @@
             formControlName="last_Name"
             required
           />
-          <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">
+          <mat-error *ngIf="signUpForm.get('last_Name')?.hasError('required')">
             You must enter your last name
           </mat-error>
         </mat-form-field>
@@ -83,19 +83,20 @@
           <mat-label>Enter your password</mat-label>
           <input
             matInput
-            [type]="hide() ? 'password' : 'text'"
+            [type]="hidePassword() ? 'password' : 'text'"
             formControlName="password"
             required
           />
           <button
             mat-icon-button
             matSuffix
-            (click)="clickEvent($event)"
+            (click)="toggleVisibility('password')"
             [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide()"
+            [attr.aria-pressed]="hidePassword()"
+            type="button"
           >
             <mat-icon class="custom-icon-color">{{
-              hide() ? "visibility_off" : "visibility"
+              hidePassword() ? "visibility_off" : "visibility"
             }}</mat-icon>
           </button>
           <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
@@ -106,19 +107,20 @@
           <mat-label>Confirm your password</mat-label>
           <input
             matInput
-            [type]="hide() ? 'password' : 'text'"
+            [type]="hideConfirmPassword() ? 'password' : 'text'"
             formControlName="confirmPassword"
             required
           />
           <button
             mat-icon-button
             matSuffix
-            (click)="clickEvent($event)"
+            (click)="toggleVisibility('confirmPassword')"
             [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide()"
+            [attr.aria-pressed]="hideConfirmPassword()"
+            type="button"
           >
             <mat-icon class="custom-icon-color">{{
-              hide() ? "visibility_off" : "visibility"
+              hideConfirmPassword() ? "visibility_off" : "visibility"
             }}</mat-icon>
           </button>
           <mat-error
@@ -134,16 +136,16 @@
           {{ error }}
         </p>
         <div class="space-between">
-          <div class="forgot"><a>Forgot Password?</a></div>
+          
           <div class="button">
             <button class="btn-sign" type="submit" mat-button>Sign Up</button>
           </div>
         </div>
       </form>
       <div class="imprint-container">
-        <span>Imprint</span>
+        <a routerLink="/imprint" target="_blank" routerLinkActive="active">Imprint</a>
         <div>|</div>
-        <span>Private Policy</span>
+        <a routerLink="/legalnotice" target="_blank" routerLinkActive="active">Legal Notice</a>
       </div>
     </mat-card-content>
   </div>

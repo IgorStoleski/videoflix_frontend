@@ -17,7 +17,7 @@ import { trigger, transition, style, animate, query, stagger, state } from '@ang
       transition('enter => leave', [
         query('.letter', [
           stagger(-600, [ 
-            animate('0.5s ease-in', style({ opacity: 0, transform: 'scale(0)' }))
+            animate('0.2s ease-in', style({ opacity: 0, transform: 'scale(0)' }))
           ])
         ], { optional: true })
       ])
@@ -42,16 +42,13 @@ export class VideoflixAnimationComponent {
     console.log('ngOnInit called');
     setTimeout(() => {
       this.animationState = 'leave';
-      console.log('Starting leave animation');
       setTimeout(() => {
         this.finalAnimationState = true;
-        console.log('Starting final animation');
       }, 6000); 
     }, 1000);
   }
 
   onFinalAnimationDone() {
-    console.log('Final animation done. Routing to login.');
     this.router.navigate(['/login']);
   }
 

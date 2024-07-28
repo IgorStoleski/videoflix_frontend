@@ -50,7 +50,7 @@
           {{ error }}
         </p>
         <div class="space-between">
-          <div class="forgot"><a>Forgot Passord?</a></div>
+          <div class="forgot"><a routerLink="/request-password-reset" routerLinkActive="active" target="_blank">Forgot Passord?</a></div>
           <div class="button">
             <button class="btn-sign" type="submit" mat-button>Sign In</button>
           </div>
@@ -58,9 +58,9 @@
       </form>
       
       <div class="imprint-container">
-        <span>Imprint</span>
+        <a routerLink="/imprint" target="_blank" routerLinkActive="active">Imprint</a>
         <div>|</div>
-        <span>Private Policy</span>
+        <a routerLink="/legalnotice" target="_blank" routerLinkActive="active">Legal Notice</a>
       </div>
     </mat-card-content>
   </div>
