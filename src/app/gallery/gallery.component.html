@@ -1,0 +1,12 @@
+<div class="gallery-content-container">
+    <div *ngFor="let video of videos" class="gallery-item">
+      <div class="video-title">{{ video.title }}</div>
+      <img
+        [src]="video.thumbnails"
+        [alt]="video.title"
+        (click)="onVideoSelected(video.id)"
+        style="cursor: pointer"
+      />
+    </div>
+    
+</div>
