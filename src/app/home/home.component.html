@@ -1,0 +1,9 @@
+<div class="content-container">
+  <div class="carousels-container">
+    <ng-container *ngFor="let genre of genre">
+      <h3>{{ genre }}</h3>
+      <app-carousel [genre]="genre" (videoSelected)="onVideoSelected($event)">
+      </app-carousel>
+    </ng-container>
+  </div>
+</div>
