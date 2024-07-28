@@ -1,0 +1,18 @@
+.legalnotice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    background-color: rgb(25, 28, 38);
+
+  .legalnotice-content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    
+    color: white;
+    max-width: 1440px;
+    width: 100%;
+  }
+}
