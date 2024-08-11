@@ -5,6 +5,9 @@
   height: 100%;
   color: white;
   gap: 40px;
+  @media (max-width: 450px) {
+    padding: 20px;
+  }
 }
 
 .video {
@@ -42,12 +45,15 @@ video {
   flex-direction: column;
   gap: 20px;
 
-  height: 200px;
 
   app-carousel {
     width: 100%;
   }
+  @media (max-width: 450px) {
+    .carousels-container {
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+    }
+  }
 }
-
-
-

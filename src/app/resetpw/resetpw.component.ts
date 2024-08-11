@@ -14,7 +14,7 @@ import { MaterialModule } from '../shared/module/material/material.module';
   styleUrl: './resetpw.component.scss'
 })
 export class ResetpwComponent {
-  private apiUrl = 'http://10.10.0.102:8000/request-password-reset/';
+  private apiUrl = 'https://backend.video-flix.de/request-password-reset/';
   email: string = '';
   message: string = '';
   messageType: 'success' | 'error' = 'success';

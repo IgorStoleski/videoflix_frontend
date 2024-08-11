@@ -23,7 +23,7 @@ export const routes: Routes = [
     { path: 'request-password-reset', component: ResetpwComponent },
     { path: 'password-reset-confirm/:uid/:token', component: ConfirmpwComponent },
     {
-        path: 'dashboard', component: DashboardComponent, /* canActivate: [authGuard] */ children: [
+        path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'doku', component: DokuComponent },

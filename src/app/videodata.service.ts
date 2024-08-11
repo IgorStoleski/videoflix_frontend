@@ -20,7 +20,8 @@ export interface Video {
   providedIn: 'root'
 })
 export class VideoService {
-  private apiUrl = 'http://10.10.0.102:8000/videos/'; 
+  /* private apiUrl = 'http://10.10.0.102:8000/videos/';  */
+  private apiUrl = 'https://backend.video-flix.de/videos/'; 
 
   constructor(private http: HttpClient) { }
 

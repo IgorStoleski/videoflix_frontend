@@ -5,6 +5,12 @@ p-carousel {
     height: 200px;
     width: 300px;
   }
+  @media (max-width: 450px) {
+    img {
+      height: 125px;
+      width: 175px;
+    }
+  }
 }
 
 h3 {

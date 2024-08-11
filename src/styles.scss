@@ -44,16 +44,6 @@ body {
   margin: 0;
 }
 
-/* .ng-star-inserted {
-  margin-top: 0 !important;
-} */
-
-/* .p-carousel-item {
-  display: flex;
-  flex: unset !important;
-  padding-right: 32px;
-} */
-
 .p-carousel-container {
   gap: 16px;
 }
@@ -87,4 +77,10 @@ video {
 }
 .resolution-buttons button {
   margin: 0 5px;
+}
+
+@media (max-width: 450px) {
+  .p-carousel-content{
+    width: 250px;
+  } 
 }

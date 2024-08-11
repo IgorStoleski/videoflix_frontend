@@ -10,7 +10,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   httpClient = inject(HttpClient);
-  baseUrl = 'http://10.10.0.102:8000';
+  /* baseUrl = 'http://10.10.0.102:8000'; */
+  baseUrl = 'https://backend.video-flix.de';
 
   private successMessageSubject = new BehaviorSubject<string>('');
   successMessage$ = this.successMessageSubject.asObservable();
