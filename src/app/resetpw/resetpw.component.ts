@@ -30,6 +30,11 @@ export class ResetpwComponent {
       (response: any) => {
         this.messageType = 'success';
         this.message = response.message;
+        if (response.message) {
+          setTimeout(() => {
+            window.close();
+          }, 3000); 
+        }
       },
       (error: any) => {
         this.messageType = 'error';
